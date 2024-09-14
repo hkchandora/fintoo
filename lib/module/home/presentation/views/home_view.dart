@@ -146,7 +146,7 @@ class HomeView extends GetView<HomeController> {
                                   fontWeight: FontWeight.w900,
                                   fontSize: 22),
                             ),
-                            const SizedBox(height: 20),
+                            const SizedBox(height: 14),
                             Row(
                               children: [
                                 Expanded(
@@ -241,8 +241,49 @@ class HomeView extends GetView<HomeController> {
                                 ),
                               ],
                             ),
+                            const SizedBox(height: 14),
                             Divider(thickness: 0.5, color: colorBlack),
-                            const SizedBox(height: 500)
+                            const SizedBox(height: 14),
+                            Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text("Your Score"),
+                                        Icon(Icons.info_outline),
+                                      ],
+                                    ),
+                                    RichText(
+                                      text: TextSpan(
+                                        style: Theme.of(context).textTheme.bodyLarge,
+                                        children: [
+                                          TextSpan(
+                                              text: "91",
+                                              style: TextStyle(
+                                                  color: colorTextBlack,
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold)),
+                                          TextSpan(
+                                              text: "|",
+                                              style: TextStyle(
+                                                  color: colorTextBlack,
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold)),
+                                          TextSpan(
+                                              text: '100',
+                                              style: TextStyle(
+                                                  color: colorTextBlack,
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold)),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                              ],
+                            )
                           ],
                         ),
                       ),
