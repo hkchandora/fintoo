@@ -22,7 +22,7 @@ class HomeView extends GetView<HomeController> {
             ))
           : Column(
               children: [
-                const SizedBox(height: 20),
+                const SizedBox(height: 16),
                 RichText(
                   text: TextSpan(
                     style: Theme.of(context).textTheme.bodyLarge,
@@ -42,32 +42,32 @@ class HomeView extends GetView<HomeController> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Asset Value",
+                        "Assets Value",
                         style: TextStyle(
                             color: colorBlack,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                            fontWeight: FontWeight.w900,
+                            fontSize: 18),
                       ),
                       Text(
                         "\u{20B9} ${controller.assetSumFormatted}",
                         style: TextStyle(
                             color: colorWhite,
                             fontWeight: FontWeight.bold,
-                            fontSize: 30),
+                            fontSize: 26),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 4),
                       Divider(
                         color: colorWhite,
                         thickness: 0.8,
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 4),
                       Row(
                         children: [
                           Expanded(
@@ -78,15 +78,15 @@ class HomeView extends GetView<HomeController> {
                                   "Liabilities",
                                   style: TextStyle(
                                       color: colorBlack,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 18),
                                 ),
                                 Text(
                                   "\u{20B9} ${controller.liabilitySumFormatted}",
                                   style: TextStyle(
                                       color: colorWhite,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 30),
+                                      fontSize: 26),
                                 ),
                               ],
                             ),
@@ -103,15 +103,15 @@ class HomeView extends GetView<HomeController> {
                                     "Net Worth",
                                     style: TextStyle(
                                         color: colorBlack,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20),
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 18),
                                   ),
                                   Text(
                                     "\u{20B9} ${controller.networthSumFormatted}",
                                     style: TextStyle(
                                         color: colorWhite,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 30),
+                                        fontSize: 26),
                                   ),
                                 ],
                               ),
@@ -127,118 +127,124 @@ class HomeView extends GetView<HomeController> {
                   child: Container(
                     width: Get.width,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(26),
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(26),
+                        topRight: Radius.circular(26),
+                      ),
                       color: colorWhite,
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Manage & View Report",
-                            style: TextStyle(
-                                color: colorGreen,
-                                fontWeight: FontWeight.w900,
-                                fontSize: 22),
-                          ),
-                          const SizedBox(height: 20),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Manage & View Report",
+                              style: TextStyle(
+                                  color: colorGreen,
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 22),
+                            ),
+                            const SizedBox(height: 20),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            border: Border.all(
+                                              color: colorBlue,
+                                              width: 2.5,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(50.0)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Icon(
+                                            Icons.edit,
                                             color: colorBlue,
-                                            width: 2.5,
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(50.0)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(6),
-                                        child: Icon(
-                                          Icons.edit,
-                                          color: colorBlue,
                                         ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      "Edit Data",
-                                      style: TextStyle(
-                                          color: colorBlack,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
+                                      const SizedBox(height: 4),
+                                      Text(
+                                        "Edit Data",
+                                        style: TextStyle(
+                                            color: colorBlack,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            border: Border.all(
+                                              color: colorBlue,
+                                              width: 2.5,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(50.0)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Icon(
+                                            Icons.visibility,
                                             color: colorBlue,
-                                            width: 2.5,
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(50.0)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(6),
-                                        child: Icon(
-                                          Icons.visibility,
-                                          color: colorBlue,
                                         ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      "View report",
-                                      style: TextStyle(
-                                          color: colorBlack,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
+                                      const SizedBox(height: 4),
+                                      Text(
+                                        "View report",
+                                        style: TextStyle(
+                                            color: colorBlack,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            border: Border.all(
+                                              color: colorBlue,
+                                              width: 2.5,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(50.0)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(6),
+                                          child: Icon(
+                                            Icons.arrow_downward_sharp,
                                             color: colorBlue,
-                                            width: 2.5,
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(50.0)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(6),
-                                        child: Icon(
-                                          Icons.arrow_downward_sharp,
-                                          color: colorBlue,
                                         ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      "Download Report",
-                                      style: TextStyle(
-                                          color: colorBlack,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
+                                      const SizedBox(height: 4),
+                                      Text(
+                                        "Download Report",
+                                        style: TextStyle(
+                                            color: colorBlack,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Divider(thickness: 0.5, color: colorBlack)
-                        ],
+                              ],
+                            ),
+                            Divider(thickness: 0.5, color: colorBlack),
+                            const SizedBox(height: 500)
+                          ],
+                        ),
                       ),
                     ),
                   ),
